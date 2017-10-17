@@ -1,6 +1,6 @@
 {
-  "name": "more-material",
-  "version": "0.0.0",
+  "name": "xmat",
+  "version": "0.1.0",
   "license": "MIT",
   "scripts": {
     "ng": "ng",
@@ -50,5 +50,9 @@
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "^2.5.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/patrimart/xmat"
   }
 }
