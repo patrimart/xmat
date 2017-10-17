@@ -1,25 +1,24 @@
 {
   "compileOnSave": false,
   "compilerOptions": {
-    "outDir": "./dist/out-tsc",
+    "outDir": "./package",
+    "baseUrl": "src",
     "sourceMap": true,
-    "declaration": false,
+    "declaration": true,
+    "module": "es2015",
     "moduleResolution": "node",
-    "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
     "strict": true,
-    "allowUnreachableCode": false,
-    "allowUnusedLabels": false,
-    "noUnusedLocals": true,
-    "noUnusedParameters": true,
-    "target": "es5",
-    "skipLibCheck": true,
-    "typeRoots": [
-      "node_modules/@types"
-    ],
+    "removeComments": true,
+    "target": "es2015",
     "lib": [
-      "es2017",
+      "es2015",
       "dom"
     ]
+  },
+  "include": [
+    "./src/module/*"
+  ],
+  "angularCompilerOptions": {
+    "skipTemplateCodegen": true
   }
 }

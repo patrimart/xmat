@@ -5,10 +5,12 @@
   "scripts": {
     "ng": "ng",
     "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha --report lcovonly -- -R spec && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && rm -rf ./coverage",
+    "test-local": "./node_modules/.bin/istanbul cover ./node_modules/mocha/bin/_mocha -- -R spec",
+    "_package": "rm -rf ./package && ./node_modules/.bin/ngc -p tsconfig.json",
+    "_copy": "cp ./package.dist.json ./package/package.json && cp ./README.md ./package",
+    "_rollup": "./node_modules/.bin/rollup -c rollup.es5.js && ./node_modules/.bin/rollup -c rollup.umd.js",
+    "dist": "npm run _package && npm run _copy && npm run _rollup"
   },
   "private": true,
   "dependencies": {
@@ -44,6 +46,7 @@
     "karma-jasmine": "~1.1.0",
     "karma-jasmine-html-reporter": "^0.2.2",
     "protractor": "~5.1.2",
+    "rollup": "^0.50.0",
     "ts-node": "~3.2.0",
     "tslint": "~5.7.0",
     "typescript": "^2.5.3"

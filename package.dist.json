@@ -1,0 +1,27 @@
+{
+  "name": "xmat",
+  "version": "0.1.0",
+  "license": "MIT",
+  "author": "Patrick Martin <bypatrickmartin@gmail.com>",
+  "description": "Extra Material components for Angular applications.",
+  "keywords": [
+    "angular",
+    "material",
+    "design",
+    "components"
+  ],
+  "main": "./xmat.umd.js",
+  "types": "./index.d.ts",
+  "module": "./xmat.es5.js",
+  "es2015": "./index.js",
+  "browser": "./index.js",
+  "peerDependencies": {
+    "@angular/cdk": "^2.0.0-beta.12",
+    "@angular/core": "^4.2.4",
+    "@angular/material": "^2.0.0-beta.12"
+  },
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  }
+}
