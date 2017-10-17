@@ -1,0 +1,124 @@
+
+:host ::ng-deep button {
+    
+    position: relative;
+    padding: 0;
+
+    &.prompt > span.mat-button-wrapper,
+    &.loading > span.mat-button-wrapper,
+    &.ok > span.mat-button-wrapper {
+        > label {
+            transform: translateX(-100%);
+        }
+
+        > div {
+            transform: translateX(0);
+        }
+    }
+
+    &.ok > span.mat-button-wrapper {
+        > div > div {
+            display: flex;
+        }
+    }
+
+    &.loading > span.mat-button-wrapper {
+        > div > mat-progress-bar {
+            display: flex;
+        }
+        > div {
+            > label, > i {
+                visibility: hidden;
+            }
+        }
+    }
+    
+    > span.mat-button-wrapper {
+
+        overflow: hidden;
+        display: flex;
+        flex-direction: row;
+        position: relative;
+        top: 0; bottom: 0; left: 0; right: 0;
+
+        > label {
+
+            position: absolute;
+            top: 0; bottom: 0; left: 0; right: 0;
+            padding: 0 16px;
+            cursor: pointer;
+
+            transition: transform 500ms;
+            transform: translateX(0);
+        }
+
+        > div {
+
+            z-index: 1;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            position: relative;
+            padding: 0 16px;
+            cursor: default;
+
+            transition: transform 500ms;
+            transform: translateX(100%);
+
+            > label {
+                margin-right: 4px;
+                cursor: default;
+            }
+
+            > i {
+                padding: 4px;
+                opacity: 0.75;
+                border-radius: 50%;
+                margin: 0 0 0 4px;
+                cursor: pointer;
+                &:hover {
+                    opacity: 1;
+                    background-color: rgba(255,255,255,0.3);
+                }
+            }
+
+            > div {
+                display: none;
+                align-items: center;
+                justify-content: center;
+
+                overflow: hidden;
+                position: absolute;
+                border-radius: 50%;
+                top: 50%; left: 50%;
+                width: 110%;
+                height: 200px;
+                margin: -100px -55%;
+        
+                animation: circleGrow 1000ms;
+            }
+
+            > mat-progress-bar {
+                display: none;
+                position: absolute;
+                margin: -2px 0;
+                top: 50%;
+                left: 0;
+            }
+        }
+    }
+}
+
+@keyframes circleGrow {
+    from {
+        width: 0;
+        height: 0;
+        margin: 0;
+    }
+
+    to {
+        width: 110%;
+        height: 200px;
+        margin: -100px -55%;
+    }
+}
