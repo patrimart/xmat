@@ -60,7 +60,7 @@ export class XMatButtonConfirm {
         this.stateHistory = [ this.stateHistory[1], s ];
     }
 
-    @Output() public click = new EventEmitter<string>();
+    @Output() public click = new EventEmitter<State>();
 
     private stateHistory: [State, State] = [ State.Ready, State.Ready ];
     private timerRef: any;
