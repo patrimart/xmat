@@ -1,3 +1,4 @@
 
 export * from "./buttons.module";
-export * from "./confirm.component";
+
+export { XMatButtonConfirm } from "./confirm/confirm.component";

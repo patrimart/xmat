@@ -4,7 +4,7 @@ import { CommonModule } from "@angular/common";
 
 import { MatButtonModule, MatProgressBarModule } from "@angular/material";
 
-import { XMatButtonConfirm } from "./confirm.component";
+import { XMatButtonConfirm } from "./confirm/confirm.component";
 
 
 @NgModule({

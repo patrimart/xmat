@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
 
-import { State } from "../module/buttons/confirm.component";
+import { State } from "../module/buttons/confirm/";
 
 @Component({
   selector: "xmat-root",

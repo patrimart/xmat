@@ -2,11 +2,9 @@ import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
-import { MatButtonModule } from "@angular/material";
-
 import { AppComponent } from "./app.component";
 
-import { XMatModule } from "../module/xmat.module";
+import { XMatModule } from "../module/";
 
 @NgModule({
   declarations: [
@@ -15,7 +13,6 @@ import { XMatModule } from "../module/xmat.module";
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MatButtonModule,
     XMatModule,
   ],
   providers: [],
