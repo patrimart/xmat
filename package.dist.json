@@ -1,6 +1,6 @@
 {
   "name": "xmat",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "license": "MIT",
   "author": "Patrick Martin <bypatrickmartin@gmail.com>",
   "description": "Extra Material components for Angular applications.",

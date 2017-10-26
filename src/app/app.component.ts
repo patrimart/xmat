@@ -1,5 +1,7 @@
 import { Component } from "@angular/core";
 
+import { State } from "../module/buttons/confirm.component";
+
 @Component({
   selector: "xmat-root",
   templateUrl: "./app.component.html",
@@ -7,14 +9,14 @@ import { Component } from "@angular/core";
 })
 export class AppComponent {
   title = "app";
-  state = "ready";
+  state = State.Ready;
 
-  public onClick(evt: string) {
+  public onClick(evt: State) {
     console.log("CLICK", evt);
-    if (evt === "ok") {
-      this.state = "loading";
-      setTimeout(() => this.state = "ok", 5000);
-      setTimeout(() => this.state = "ready", 15000);
+    if (evt === State.Ok) {
+      this.state = State.Loading;
+      setTimeout(() => this.state = State.Ok, 5000);
+      setTimeout(() => this.state = State.Ready, 15000);
     }
   }
 }

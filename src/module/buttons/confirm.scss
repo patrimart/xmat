@@ -4,37 +4,42 @@
     position: relative;
     padding: 0;
 
-    &.prompt > span.mat-button-wrapper,
-    &.loading > span.mat-button-wrapper,
-    &.ok > span.mat-button-wrapper {
+    &.prompt > span.mat-button-wrapper {
         > label {
             transform: translateX(-100%);
         }
-
-        > div {
+        > div.prompt {
             transform: translateX(0);
         }
     }
 
     &.ok > span.mat-button-wrapper {
-        > div > div {
+        > div.ok {
             display: flex;
+            opacity: 1;
+            width: 110%;
+            height: 200px;
+            margin: -100px -55%;
+
+            transition: width 1s, height 1s, margin 1s, opacity 100ms;            
         }
     }
 
     &.loading > span.mat-button-wrapper {
-        > div > mat-progress-bar {
+        > div.progress {
             display: flex;
         }
-        > div {
-            > label, > i {
-                visibility: hidden;
-            }
+        > label, > div.prompt {
+            visibility: hidden;
         }
+    }
+
+    &.transition > span.mat-button-wrapper > label,
+    &.transition > span.mat-button-wrapper > div.prompt {
+        transition: transform 500ms;
     }
     
     > span.mat-button-wrapper {
-
         overflow: hidden;
         display: flex;
         flex-direction: row;
@@ -42,18 +47,15 @@
         top: 0; bottom: 0; left: 0; right: 0;
 
         > label {
-
             position: absolute;
             top: 0; bottom: 0; left: 0; right: 0;
             padding: 0 16px;
             cursor: pointer;
 
-            transition: transform 500ms;
             transform: translateX(0);
         }
 
-        > div {
-
+        > div.prompt {
             z-index: 1;
             display: flex;
             flex-direction: row;
@@ -62,7 +64,6 @@
             padding: 0 16px;
             cursor: default;
 
-            transition: transform 500ms;
             transform: translateX(100%);
 
             > label {
@@ -81,44 +82,56 @@
                     background-color: rgba(255,255,255,0.3);
                 }
             }
+        }
 
-            > div {
-                display: none;
-                align-items: center;
-                justify-content: center;
+        > div.ok {
+            z-index: 2;
+            display: flex;
+            opacity: 0;
+            align-items: center;
+            justify-content: center;
 
-                overflow: hidden;
-                position: absolute;
-                border-radius: 50%;
-                top: 50%; left: 50%;
-                width: 110%;
-                height: 200px;
-                margin: -100px -55%;
-        
-                animation: circleGrow 1000ms;
-            }
+            overflow: hidden;
+            position: absolute;
+            border-radius: 50%;
+            top: 50%; left: 50%;
+            width: 0;
+            height: 0;
+            margin: 0;
 
+            transition: width 400ms, height 400ms, margin 400ms, opacity 100ms 300ms ease;
+        }
+
+        > div.progress {
+            display: none;
+            position: absolute;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            transition: opacity 500ms;
             > mat-progress-bar {
-                display: none;
                 position: absolute;
                 margin: -2px 0;
                 top: 50%;
                 left: 0;
+                height: 4px;
             }
         }
     }
 }
 
-@keyframes circleGrow {
-    from {
-        width: 0;
-        height: 0;
-        margin: 0;
-    }
+// @keyframes circleGrow {
+//     from {
+//         opacity: 0;
+//         width: 0;
+//         height: 0;
+//         margin: 0;
+//     }
 
-    to {
-        width: 110%;
-        height: 200px;
-        margin: -100px -55%;
-    }
-}
+//     to {
+//         opacity: 4;
+//         width: 110%;
+//         height: 200px;
+//         margin: -100px -55%;
+//     }
+// }
