@@ -8,6 +8,8 @@ More docs coming soon.
 npm install -S xmat
 ```
 
+Note: Requires `@angular/material v2.0.0-beta.12` or above.
+
 ## Usage
 
 ```typescript
